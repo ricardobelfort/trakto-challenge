@@ -1,6 +1,10 @@
-# TraktoChallengeUi
+# Trakto Challenge Ui
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+
+## Quality of Code
+
+[![DeepScan grade](https://deepscan.io/api/teams/20752/projects/24438/branches/753043/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=20752&pid=24438&bid=753043)
 
 ## Development server
 
