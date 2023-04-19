@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
 ## Visit the Project
-Click on the link to visit the project (https://trakto-challenge.vercel.app/)
+Click on the link to visit the [Project](https://trakto-challenge.vercel.app/)
 
 ## Quality of Code
 
