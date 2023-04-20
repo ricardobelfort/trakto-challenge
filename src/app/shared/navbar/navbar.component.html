@@ -1,0 +1,31 @@
+<div class="container__navbar">
+  <img class="logo" src="../../../../assets/images/trakto-edu.png" alt="logo" />
+  <div class="profile">
+    <ul class="profile__nav">
+      <li class="item">
+        <img
+          class="item__icon"
+          src="../../../../assets/images/calendar.svg"
+          alt="calendar"
+        />
+        {{ today | date : "dd/MM/yyyy" }}
+      </li>
+      <li class="item-before"></li>
+      <li class="item">
+        <img
+          src="../../../../assets/images/notification.svg"
+          alt="notification"
+        />
+      </li>
+      <li class="item-after"></li>
+      <li class="item">
+        <img
+          class="item__avatar"
+          src="../../../../assets/images/avatar.png"
+          alt="avatar"
+        />
+        <img src="../../../../assets/images/chevron-down.svg" alt="down" />
+      </li>
+    </ul>
+  </div>
+</div>
