@@ -18,15 +18,10 @@ export class LoginComponent {
     this.isLoading = true;
 
     this.authService.login(user).subscribe((res: any) => {
-      if (res.status === 201) {
-        localStorage.setItem('access_token', res.access_token);
-        localStorage.setItem('refresh_token', res.refresh_token);
-        this.router.navigate(['/dashboard']);
-      } else if (res.statusCode === 401) {
-        console.log(res.message);
-      } else {
-        console.error('Internal server error!');
-      }
+      localStorage.setItem('access_token', res.access_token);
+      localStorage.setItem('refresh_token', res.refresh_token);
+      localStorage.setItem('firstname', res.firstname);
+      this.router.navigate(['/dashboard']);
     });
   }
 }

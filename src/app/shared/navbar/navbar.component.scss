@@ -9,13 +9,15 @@
     justify-content: space-between;
 
     .logo {
-      height: 56px;
+      height: 3.125rem;
+      margin-top: 0.5rem;
     }
 
     .profile {
       width: 320px;
-      display: flex;
+      display: inline-block;
       align-items: center;
+      position: relative;
 
       &__nav {
         width: 100%;
@@ -37,6 +39,7 @@
 
           &__avatar {
             margin-right: 0.25rem;
+            cursor: pointer;
           }
         }
 
@@ -47,6 +50,59 @@
           background: var(--bd-light);
           transform: rotate(90deg);
           opacity: 0.32;
+        }
+      }
+
+      .select-profile {
+        display: none;
+        width: 220px;
+        background: var(--white);
+        position: absolute;
+        margin-top: 40px;
+        top: 0px;
+        right: 0px;
+        border-radius: 4px;
+        transition: all 0.5s ease;
+
+        .username {
+          display: flex;
+          align-items: center;
+          font-size: 1.2rem;
+          font-weight: 300;
+          color: var(--dark);
+          text-transform: capitalize;
+          padding: 1rem;
+        }
+
+        .divisor {
+          width: 100%;
+          height: 1px;
+          background: var(--bd-light);
+        }
+
+        .logout {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 0.875rem;
+          color: var(--dark);
+
+          &:hover {
+            color: var(--primary);
+          }
+
+          img {
+            margin-right: 0.8rem;
+            height: 20px;
+          }
+        }
+      }
+
+      &:hover {
+        display: block;
+
+        .select-profile {
+          display: block;
         }
       }
     }
