@@ -68,6 +68,22 @@
         border: none;
         color: var(--white);
         cursor: pointer;
+        font-weight: 700;
+        transition: 0.2s all;
+
+        &:hover {
+          background: var(--primary-hover);
+        }
+
+        .loading {
+          width: 24px;
+          margin-right: 10px;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
       }
     }
   }

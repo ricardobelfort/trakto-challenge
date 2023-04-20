@@ -2,16 +2,29 @@
   <div class="login">
     <img class="login__logo" src="/assets/images/trakto-logo.svg" alt="logo" />
     <h1 class="login__welcome">Olá, faça login em sua conta.</h1>
-    <form class="login__form">
+    <form #loginForm (submit)="onSubmit(user)" class="login__form">
       <label for="email">
         E-mail
-        <input type="email" name="email" id="email" />
+        <input type="email" [(ngModel)]="user.email" name="email" id="email" />
       </label>
       <label for="password">
         Senha
-        <input type="password" name="password" id="password" />
+        <input
+          type="password"
+          [(ngModel)]="user.password"
+          name="password"
+          id="password"
+        />
       </label>
-      <button class="btn-primary">Entrar</button>
+      <button type="submit" class="btn-primary" [disabled]="isLoading">
+        <img
+          *ngIf="isLoading"
+          class="loading"
+          src="../../../assets/images/spinner.svg"
+          alt="loading"
+        />
+        {{ isLoading ? "Entrando..." : "Entrar" }}
+      </button>
     </form>
   </div>
 </div>
