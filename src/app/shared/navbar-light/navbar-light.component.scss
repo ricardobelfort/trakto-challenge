@@ -1,8 +1,8 @@
 .container {
-  &__navbar {
+  &__navbar-light {
     width: 100%;
     height: 4.75rem;
-    background-color: var(--dark);
+    background-color: var(--white);
     padding: 0 4rem;
     display: flex;
     align-items: center;
@@ -10,7 +10,6 @@
 
     .logo {
       height: 3.125rem;
-      margin-top: 0.5rem;
     }
 
     .profile {
@@ -31,7 +30,7 @@
           align-items: center;
           font-size: 1.125rem;
           font-weight: 400;
-          color: var(--bd-light);
+          color: var(--cloudy);
 
           &__icon {
             margin-right: 0.5rem;
@@ -47,7 +46,7 @@
         .item-after {
           width: 24px;
           height: 1px;
-          background: var(--bd-light);
+          background: var(--cloudy);
           transform: rotate(90deg);
           opacity: 0.32;
         }
@@ -80,7 +79,7 @@
         .divisor {
           width: 100%;
           height: 1px;
-          background: var(--bd-light);
+          background: var(--light);
         }
 
         .logout {

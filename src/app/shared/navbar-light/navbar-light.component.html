@@ -1,0 +1,42 @@
+<div class="container__navbar-light">
+  <img
+    class="logo"
+    src="../../../../assets/images/trakto-edu-dark.png"
+    alt="logo"
+  />
+  <div class="profile">
+    <ul class="profile__nav">
+      <li class="item">
+        <img
+          class="item__icon"
+          src="../../../../assets/images/calendar-dark.svg"
+          alt="calendar"
+        />
+        {{ today | date : "dd/MM/yyyy" }}
+      </li>
+      <li class="item-before"></li>
+      <li class="item">
+        <img
+          src="../../../../assets/images/notification-dark.svg"
+          alt="notification"
+        />
+      </li>
+      <li class="item-after"></li>
+      <li class="item">
+        <img class="item__avatar" src="../../../../assets/images/avatar.png" />
+        <img src="../../../../assets/images/chevron-down-dark.svg" />
+      </li>
+    </ul>
+
+    <div class="select-profile">
+      <p class="username">
+        {{ username }}
+      </p>
+      <div class="divisor"></div>
+      <p class="logout" (click)="logout()">
+        <img src="../../../assets/images/log-out.svg" />
+        Sair
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <section class="icons-section">
+    <div class="icon" *ngFor="let icon of icons">
+      <h2 class="icon__title">{{ icon.title }}</h2>
+      <div [class]="icon.divisorColor"></div>
+      <a routerLink="/material-didatico">
+        <img class="icon__type" [src]="icon.iconUrl" [alt]="icon.title" />
+      </a>
+    </div>
+  </section>
+</div>

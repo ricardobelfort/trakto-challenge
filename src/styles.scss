@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "ngx-toastr/toastr";
 
 * {
   margin: 0;
@@ -19,12 +20,20 @@ body {
 
 :root {
   --brand: #66bfff;
+  --brand-dark: #4743ff;
   --primary: #1dc763;
   --primary-hover: #17944b;
+  --danger: #ff0100;
   --white: #fff;
   --light: #eff2f9;
   --bd-light: #e4ebfb;
   --clear: #d0daef;
   --darkest: #04183e;
+  --cloudy: #7183a6;
   --dark: #252323;
+  --dark-200: #354564;
+}
+
+ul {
+  list-style: none;
 }

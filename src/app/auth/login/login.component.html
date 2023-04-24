@@ -2,10 +2,16 @@
   <div class="login">
     <img class="login__logo" src="/assets/images/trakto-logo.svg" alt="logo" />
     <h1 class="login__welcome">Olá, faça login em sua conta.</h1>
-    <form #loginForm (submit)="onSubmit(user)" class="login__form">
+    <form class="login__form">
       <label for="email">
         E-mail
-        <input type="email" [(ngModel)]="user.email" name="email" id="email" />
+        <input
+          type="email"
+          [(ngModel)]="user.email"
+          name="email"
+          id="email"
+          autocomplete="false"
+        />
       </label>
       <label for="password">
         Senha
@@ -16,7 +22,11 @@
           id="password"
         />
       </label>
-      <button type="submit" class="btn-primary" [disabled]="isLoading">
+      <button
+        class="btn-primary"
+        (click)="onSubmit(user)"
+        [disabled]="isLoading"
+      >
         <img
           *ngIf="isLoading"
           class="loading"
