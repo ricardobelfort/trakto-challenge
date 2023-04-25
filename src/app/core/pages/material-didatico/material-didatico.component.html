@@ -28,18 +28,24 @@
           </div>
         </div>
         <div class="col">
-          <button class="btn-outlined blue">Ver todo conteúdo</button>
+          <button class="btn-outlined blue" routerLink="/all-presentations">
+            Ver todo conteúdo
+          </button>
         </div>
       </header>
 
       <main class="slider">
         <div class="slider__design" *ngFor="let item of designs">
           <picture>
-            <img [src]="item.thumbs.high" [alt]="item.thumbs.low" />
+            <img
+              loading="lazy"
+              [src]="item.thumbs.high"
+              [alt]="item.thumbs.low"
+            />
           </picture>
           <div class="details">
-            <a [routerLink]="['/material-didatico', item.id]">
-              <p class="description">{{ item.title }}</p>
+            <a class="description" [routerLink]="['/presentation', item.id]">
+              {{ item.title }}
             </a>
           </div>
         </div>

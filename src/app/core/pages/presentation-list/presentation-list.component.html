@@ -1,0 +1,32 @@
+<div class="container">
+  <app-navbar-light></app-navbar-light>
+  <section class="content">
+    <article class="content__recent-draws">
+      <header>
+        <div class="col">
+          <div class="col__title">
+            <h2>Material Didático</h2>
+            <p>Acesse suas últimas apresentações de aula.</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="slider">
+        <div class="slider__design" *ngFor="let item of designs">
+          <picture>
+            <img
+              loading="lazy"
+              [src]="item.thumbs.high"
+              [alt]="item.thumbs.low"
+            />
+          </picture>
+          <div class="details">
+            <a class="description" [routerLink]="['/presentation', item.id]">
+              {{ item.title }}
+            </a>
+          </div>
+        </div>
+      </main>
+    </article>
+  </section>
+</div>

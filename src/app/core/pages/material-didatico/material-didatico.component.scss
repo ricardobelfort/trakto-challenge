@@ -139,6 +139,11 @@
               font-size: 1.125rem;
               font-weight: 700;
               color: var(--dark-200);
+              text-decoration: none;
+
+              &:hover {
+                color: var(--cloudy);
+              }
             }
           }
         }

@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bd-light);
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+}

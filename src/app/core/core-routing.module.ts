@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialDidaticoComponent } from './pages/material-didatico/material-didatico.component';
 import { PresentationDetailComponent } from './pages/presentation-detail/presentation-detail.component';
+import { PresentationListComponent } from './pages/presentation-list/presentation-list.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'presentation', component: MaterialDidaticoComponent },
+      { path: 'all-presentations', component: PresentationListComponent },
       { path: 'presentation/:id', component: PresentationDetailComponent },
     ],
   },
