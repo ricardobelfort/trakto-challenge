@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
@@ -10,30 +11,49 @@ import { User } from './../../models/user';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  loginForm: FormGroup;
   user = new User();
   isLoading = false;
-  errors: string[] = [];
 
   constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
-  ) {}
+  ) {
+    this.loginForm = this.initForm();
+  }
 
-  onSubmit(user: User) {
+  initForm(): FormGroup {
+    return this.fb.group({
+      email: [
+        '',
+        [Validators.required, Validators.minLength(6), Validators.email],
+      ],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
+  isFormControlInvalid(controlName: string) {
+    return (
+      this.loginForm.get(controlName)?.invalid &&
+      this.loginForm.get(controlName)?.touched
+    );
+  }
+
+  onSubmit() {
     this.isLoading = true;
+    const { email, password } = this.loginForm.value;
+    this.loginForm.reset();
 
-    this.authService.login(user).subscribe(
-      (res: any) => {
+    this.authService.login(email, password).subscribe(
+      (res) => {
+        this.toastr.success('Login efetuado com sucesso!');
         this.router.navigate(['/dashboard']);
-        this.toastr.success('Bem-vindo de volta!', res.message);
-        localStorage.setItem('access_token', res.access_token);
-        localStorage.setItem('refresh_token', res.refresh_token);
-        localStorage.setItem('firstname', res.firstname);
       },
-      (err) => {
+      (error) => {
         this.isLoading = false;
-        this.toastr.error(err.message);
+        this.toastr.error(error.message, 'Falha ao realizar o login');
       }
     );
   }

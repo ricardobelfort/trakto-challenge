@@ -3,6 +3,7 @@
     class="logo"
     src="../../../../assets/images/trakto-edu-dark.png"
     alt="logo"
+    (click)="goToDashboard()"
   />
   <div class="profile">
     <ul class="profile__nav">
@@ -29,9 +30,7 @@
     </ul>
 
     <div class="select-profile">
-      <p class="username">
-        {{ username }}
-      </p>
+      <p class="username">{{ firstname }} {{ lastname }}</p>
       <div class="divisor"></div>
       <p class="logout" (click)="logout()">
         <img src="../../../assets/images/log-out.svg" />

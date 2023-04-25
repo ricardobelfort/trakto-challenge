@@ -37,3 +37,9 @@ body {
 ul {
   list-style: none;
 }
+
+.tx-danger {
+  color: var(--danger);
+  font-size: 0.75rem;
+  padding: 0.25rem 0 0;
+}

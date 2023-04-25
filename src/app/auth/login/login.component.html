@@ -2,31 +2,35 @@
   <div class="login">
     <img class="login__logo" src="/assets/images/trakto-logo.svg" alt="logo" />
     <h1 class="login__welcome">Olá, faça login em sua conta.</h1>
-    <form class="login__form">
+    <form [formGroup]="loginForm" (submit)="onSubmit()" class="login__form">
       <label for="email">
         E-mail
         <input
           type="email"
-          [(ngModel)]="user.email"
           name="email"
           id="email"
+          formControlName="email"
           autocomplete="false"
+          required
         />
+        <div *ngIf="isFormControlInvalid('email')" class="tx-danger">
+          O e-mail é obrigatório e deve ter pelo menos 6 caracteres.
+        </div>
       </label>
       <label for="password">
         Senha
         <input
           type="password"
-          [(ngModel)]="user.password"
           name="password"
           id="password"
+          formControlName="password"
+          required
         />
+        <div *ngIf="isFormControlInvalid('password')" class="tx-danger">
+          A senha é obrigatória e deve conter pelo menos 6 caracteres.
+        </div>
       </label>
-      <button
-        class="btn-primary"
-        (click)="onSubmit(user)"
-        [disabled]="isLoading"
-      >
+      <button class="btn-primary" [disabled]="isLoading || !loginForm.valid">
         <img
           *ngIf="isLoading"
           class="loading"

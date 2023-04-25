@@ -124,6 +124,14 @@
         }
 
         &__design {
+          picture {
+            img {
+              width: 310px;
+              height: 174px;
+              background-color: var(--bd-light);
+              border-radius: 8px;
+            }
+          }
           .details {
             margin-top: 1rem;
 

@@ -8,13 +8,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   today: number = Date.now();
-  username = localStorage.getItem('firstname');
+  firstname = localStorage.getItem('firstname');
+  lastname = localStorage.getItem('lastname');
 
   constructor(private router: Router) {}
-
-  getUername() {
-    return localStorage.getItem('firstname');
-  }
 
   logout() {
     this.router.navigate(['/']);
