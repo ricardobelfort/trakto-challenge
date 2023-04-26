@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +10,9 @@ export class NavbarComponent {
   firstname = localStorage.getItem('firstname');
   lastname = localStorage.getItem('lastname');
 
-  constructor(private router: Router, private authService: AuthService) {}
+  @Output() private logout = new EventEmitter();
 
-  logout() {
-    this.authService.removeTokenLocalStorage();
-    this.router.navigate(['/']);
+  onLogout(): void {
+    this.logout.emit();
   }
 }

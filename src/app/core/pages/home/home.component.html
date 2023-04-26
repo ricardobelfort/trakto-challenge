@@ -1,5 +1,5 @@
 <div class="container">
-  <app-navbar></app-navbar>
+  <app-navbar (logout)="onLogout()"></app-navbar>
   <section class="icons-section">
     <div class="icon" *ngFor="let icon of icons">
       <h2 class="icon__title">{{ icon.title }}</h2>

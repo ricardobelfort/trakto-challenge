@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-presentation-detail',
@@ -9,7 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class PresentationDetailComponent implements OnInit {
   design: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.design = this.route.snapshot.data['design'];
@@ -17,5 +21,9 @@ export class PresentationDetailComponent implements OnInit {
 
   goBack() {
     window.history.back();
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }

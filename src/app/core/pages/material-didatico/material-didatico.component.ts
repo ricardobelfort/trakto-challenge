@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { DesignService } from '../../services/design.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { DesignService } from '../../services/design.service';
 export class MaterialDidaticoComponent implements OnInit {
   designs: any[] = [];
 
-  constructor(private designService: DesignService) {}
+  constructor(
+    private designService: DesignService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getAllDesigns();
@@ -19,5 +23,9 @@ export class MaterialDidaticoComponent implements OnInit {
     this.designService
       .findAllDesigns()
       .subscribe((res) => (this.designs = res.data));
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }

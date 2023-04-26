@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { Icon } from '../../models/icon';
 
 @Component({
@@ -33,4 +34,10 @@ export class HomeComponent {
       iconUrl: './../../../../assets/images/youtube.png',
     },
   ];
+
+  constructor(private authService: AuthService) {}
+
+  onLogout(): void {
+    this.authService.logout();
+  }
 }

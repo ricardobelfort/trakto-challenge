@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { DesignService } from '../../services/design.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { DesignService } from '../../services/design.service';
 export class PresentationListComponent implements OnInit {
   designs: any[] = [];
 
-  constructor(private designService: DesignService) {}
+  constructor(
+    private designService: DesignService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getAllDesigns();
@@ -23,5 +27,9 @@ export class PresentationListComponent implements OnInit {
 
   goBack() {
     window.history.back();
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }
