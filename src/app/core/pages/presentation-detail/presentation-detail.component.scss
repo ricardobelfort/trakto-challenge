@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  height: 100vh;
   background-color: var(--bd-light);
 
   .content {
@@ -8,5 +7,60 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+
+    &__recent-draws {
+      width: 100%;
+      background-color: var(--white);
+      border-radius: 8px;
+      padding: 3.5rem 4.5rem;
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        line-height: 1;
+
+        .col {
+          display: flex;
+          align-items: center;
+
+          &__btn-back {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: 0.2s all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: var(--light);
+            }
+          }
+
+          &__title {
+            h2 {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: var(--dark-200);
+              margin-bottom: 0.5rem;
+            }
+
+            small {
+              color: var(--bd-light);
+            }
+          }
+        }
+      }
+
+      .show-design {
+        margin-top: 2rem;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }

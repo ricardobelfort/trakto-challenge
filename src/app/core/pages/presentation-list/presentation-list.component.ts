@@ -20,4 +20,8 @@ export class PresentationListComponent implements OnInit {
       .findAllDesigns()
       .subscribe((res) => (this.designs = res.data));
   }
+
+  goBack() {
+    window.history.back();
+  }
 }

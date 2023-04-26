@@ -1,6 +1,22 @@
 <div class="container">
   <app-navbar-light></app-navbar-light>
   <section class="content">
-    <p>presentation-detail works!</p>
+    <article class="content__recent-draws">
+      <header>
+        <div class="col">
+          <div class="col__btn-back" (click)="goBack()">
+            <img src="../../../../assets/images/chevron-left.svg" />
+          </div>
+          <div class="col__title">
+            <h2>{{ design?.title }}</h2>
+            <small>{{ design?.id }}</small>
+          </div>
+        </div>
+      </header>
+
+      <main class="show-design">
+        <img [src]="design?.thumbs?.high" [alt]="design?.title" />
+      </main>
+    </article>
   </section>
 </div>
